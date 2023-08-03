@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "email": "admin@gmail.com",
+        "password": "uvHSMD2a1EQQby1mtwZ9rtfeFN5DXmp5f5MJnT6tveA=",
+        "name": "admin",
+        "phone": "0123456789",
+        "role": "admin"
+    },
+    {
+        "id": 4,
+        "email": "Alex@gmail.com",
+        "password": "4321",
+        "name": "Alex",
+        "phone": "0123412345",
+        "role": "user"
+    },
+    {
+        "id": 5,
+        "email": "berry@gmail.com",
+        "password": "1234",
+        "name": "Berry",
+        "phone": "0781234123",
+        "role": "user"
+    },
+    {
+        "id": 6,
+        "email": "berry@gmail.com",
+        "password": "1234",
+        "name": "Berry",
+        "phone": "0781234123",
+        "role": "user"
+    },
+    {
+        "id": 7,
+        "email": "berry@gmail.com",
+        "password": "1234",
+        "name": "Berry",
+        "phone": "0781234123",
+        "role": "user"
+    },
+    {
+        "id": 8,
+        "email": "berry@gmail.com",
+        "password": "1234",
+        "name": "Berry",
+        "phone": "0781234123",
+        "role": "user"
+    },
+    {
+        "id": 9,
+        "email": "berry@gmail.com",
+        "password": "1234",
+        "name": "Berry",
+        "phone": "0781234123",
+        "role": "user"
+    },
+    {
+        "id": 10,
+        "email": "cater@gmail.com",
+        "password": "1234",
+        "name": "cater",
+        "phone": "1234",
+        "role": "user"
+    },
+    {
+        "id": 11,
+        "email": "deelan@gmail.com",
+        "password": "WZRHGrsBESr8wYFZ9sx0tPURuZgG2lmzyvWpwXPKz8U=",
+        "name": "Deelan",
+        "phone": "0932847561",
+        "role": "user"
+    },
+    {
+        "id": 12,
+        "email": "ethan@gmail.con",
+        "password": "FS9x1HAJwAwNYCbJuuSgM5+Ko7u75FyQIuEIGJsXDso=",
+        "name": "Ethan",
+        "phone": "1234",
+        "role": "user"
+    },
+    {
+        "id": 13,
+        "email": "froy@gmail.com",
+        "password": "uvHSMD2a1EQQby1mtwZ9rtfeFN5DXmp5f5MJnT6tveA=",
+        "name": "Froy",
+        "phone": "0847264736",
+        "role": "user"
+    }
+]

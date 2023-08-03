@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('header') %>
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <%- include('menu') %>
+
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-primary" id="sidebarToggle">Menu</button>
+        </div>
+      </nav>
+      <!-- ---------------------------------------------------------------- -->
+      <div class="container-fluid">
+        <div>
+          <h1>จัดการข้อมูลอสังหา</h1>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Type</th>
+                <th scope="col">Sale</th>
+                <th scope="col">Rent</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <% for (const [index, prop] of properties.entries()) { %>
+            <tr>
+              <form action="/dashboard/property/edit" method="get">
+                <td><%= prop.id %></td>
+                <td><%= prop.real_estate_name %></td>
+                <td><%= prop.LOCATION %></td>
+                <td><%= prop.property_type %></td>
+                <td><%= prop.SALE_PRICE %></td>
+                <td><%= prop.RENT_PRICE %></td>
+                <td>
+                  <input type="hidden" name="id" value="<%= prop.id %>">
+                  <input type="submit" name="submit" value="Edit">
+                </td>
+              </form>
+            </tr>
+            <% } %>
+            <tr>
+              <td colspan="7">---END---</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- ---------------------------------------------------------------- -->
+    </div>
+  </div>
+
+  <%- include('footer') %>
+</body>
+
+</html>

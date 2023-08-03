@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+
+
+    <title>Property View</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include('header') %>
+
+        <section class="py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="row-cols-1 input-group-text">
+                    <form action="/search" method="get">
+                        <input class="form-control-sm" type="text" name="keyword" size="50"
+                            placeholder="please input keyword">
+                        <button class="btn btn-outline-dark">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
+                    <% items.forEach(item => { %>
+                        <div class="col mb-5">
+
+                            <div class="card h-100" style="width: 18rem;">
+                                <img src="/property/<%= item.image_01 %>" class="card-img-top" alt="condo EPT">
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <h5 class="card-title"> <%= item.real_estate_name %> </h5>
+                                        <p>Location : <%= item.LOCATION %> </p>
+                                        <p>Property Type : <%= item.property_type %> </p>
+                                        <h5 class="fw-bolder">ขาย : <%= item.SALE_PRICE %> </h5>
+                                        <h5 class="fw-bolder">เช่า : <%= item.RENT_PRICE %> </h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
+                                    <a href="/property_detail/<%= item.id %>" class="btn btn-primary">detail</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        </section>
+
+    <!-- FOOTER -->
+    <%- include('footer') %>
+
+</body>
+
+</html>

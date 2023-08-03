@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('header') %>
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <%- include('menu') %>
+
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+        </div>
+      </nav>
+      <!-- ---------------------------------------------------------------- -->
+      <div class="container-fluid">
+        <div>
+          <h1 class="mt-4">Welcome, <%= name %></h1>
+          <br>
+          <p>You are <%= role %></p>
+          <p>Please select menu</p>
+        </div>
+      </div>
+      <!-- ---------------------------------------------------------------- -->
+    </div>
+  </div>
+
+  <%- include('footer') %>
+</body>
+
+</html>

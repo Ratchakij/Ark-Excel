@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('header') %>
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <%- include('menu') %>
+
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+          <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Menu</button>
+          </div>
+        </nav>
+        <!-- ---------------------------------------------------------------- -->
+        <div class="container-fluid">
+          <div>
+            <h1>แก้ไขข้อมูลอสังหา</h1>
+            <form action="/dashboard/property/edit" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="id" value="<%= item.id %>" />
+              <table class="table">
+                <thead style="text-align: center">
+                  <tr>
+                    <th>Section</th>
+                    <th>Detail</th>
+                  </tr>
+                </thead>
+                <tbody style="text-align: left; vertical-align: middle;">
+                  <tr>
+                    <th>real_estate_name:</th>
+                    <td><input style="width: 100%" type="text" name="real_estate_name" value="<%= item.real_estate_name %>"/></td>
+                  </tr>
+                  <tr>
+                    <th>lat:</th>
+                    <td><input style="width: 100%" type="text" name="lat" value="<%= item.lat %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>lon:</th>
+                    <td><input style="width: 100%" type="text" name="lon" value="<%= item.lon %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>LOCATION:</th>
+                    <td><input style="width: 100%" type="text" name="LOCATION" value="<%= item.LOCATION %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>property_type:</th>
+                    <td>
+                      <select style="width: 100%" type="text" name="property_type">
+                        <option value="<%= item.property_type %>" selected><%= item.property_type %></option>
+                        <option value="house">house</option>
+                        <option value="condominium">condominium</option>
+                        <option value="land">land</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>TRANSACTION:</th>
+                    <td>
+                      <select style="width: 100%" type="text" name="TRANSACTION">
+                        <option value="<%= item.TRANSACTION %>" selected><%= item.TRANSACTION %></option>
+                        <option value="FOR SELL ONLY">FOR SELL ONLY</option>
+                        <option value="RENT UP TO 6 MONTHS">RENT UP TO 6 MONTHS</option>
+                        <option value="FOR RENT AND FOR SELL">FOR RENT AND FOR SELL</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>SALE_TERMS:</th>
+                    <td>
+                      <select style="width: 100%" type="text" name="SALE_TERMS">
+                        <option value="<%= item.SALE_TERMS %>" selected><%= item.SALE_TERMS %></option>
+                        <option value="LEASEHOLD">LEASEHOLD</option>
+                        <option value="FREEHOLD">FREEHOLD</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>SALE_PRICE:</th>
+                    <td><input style="width: 100%" type="text" name="SALE_PRICE" value="<%= item.SALE_PRICE %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>RENT_PRICE:</th>
+                    <td><input style="width: 100%" type="text" name="RENT_PRICE" value="<%= item.RENT_PRICE %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>COMMON_CHARGES:</th>
+                    <td><input style="width: 100%" type="text" name="COMMON_CHARGES" value="<%= item.COMMON_CHARGES %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>DECORATION_STYLE:</th>
+                    <td><input style="width: 100%" type="text  name="DECORATION_STYLE"  value="<%= item.DECORATION_STYLE %>"/></td>
+                  </tr>
+                  <tr>
+                    <th>BEDROOMS:</th>
+                    <td><input style="width: 100%" type="text" name="BEDROOMS" value="<%= item.BEDROOMS %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>BATHROOMS:</th>
+                    <td><input style="width: 100%" type="text" name="BATHROOMS" value="<%= item.BATHROOMS %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>DIRECTION_OF_ROOM:</th>
+                    <td>
+                      <select style="width: 100%" type="text" name="DIRECTION_OF_ROOM">
+                        <option value="<%= item.DIRECTION_OF_ROOM %>" selected><%= item.DIRECTION_OF_ROOM %></option>
+                        <option value="North">North</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="South">South</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>UNIT_SIZE:</th>
+                    <td><input style="width: 100%" type="text" name="UNIT_SIZE" value="<%= item.UNIT_SIZE %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>LAND_AREA:</th>
+                    <td><input style="width: 100%" type="text" name="LAND_AREA" value="<%= item.LAND_AREA %>" /></td>
+                  </tr>
+                  <tr>
+                    <th>INROOM_FACILITIES:</th>
+                    <td><input style="width: 100%" type="text" name="INROOM_FACILITIES" value="<%= item.INROOM_FACILITIES %>"/></td>
+                  </tr>
+                  <tr>
+                    <th>PUBLIC_FACILITIES:</th>
+                    <td><input style="width: 100%" type="text" name="PUBLIC_FACILITIES" value="<%= item.PUBLIC_FACILITIES %>"/></td>
+                  </tr>
+                  <tr>
+                    <th>IMAGE_01: </th>
+                    <td><img src="/property/<%= item.image_01 %>" alt="property" width="100px" height="100px"/>
+                        <input type="file" name="image" value="<%= item.image_01 %>" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>IMAGE_02: </th>
+                    <td>
+                        <span><img src="/property/<%= item.image_02 %>" alt="property"  width="100px" height="100px"/></span>
+                        <input type="file" name="image" value="<%= item.image_02 %>" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>IMAGE_03: </th>
+                    <td>
+                        <span><img src="/property/<%= item.image_03 %>" alt="property" width="100px" height="100px"/></span>
+                        <input type="file" name="image" value="<%= item.image_03 %>" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>IMAGE_04: </th>
+                    <td>
+                        <span><img src="/property/<%= item.image_04 %>" alt="property" width="100px" height="100px"/></span>
+                        <input type="file" name="image" value="<%= item.image_04 %>" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>IMAGE_05: </th>
+                    <td>
+                        <span><img src="/property/<%= item.image_05 %>" alt="property" width="100px" height="100px"/></span>
+                        <input type="file" name="image" value="<%= item.image_05 %>" />
+                    </td>
+                  </tr>
+                </tbody>
+                <div style="display: flex; margin-top: 20px;">
+                   <img src="/property/<%= item.image_01 %>" alt="property" width="20%" /> 
+                   <img src="/property/<%= item.image_02 %>" alt="property" width="20%" /> 
+                   <img src="/property/<%= item.image_03 %>" alt="property" width="20%" /> 
+                   <img src="/property/<%= item.image_04 %>" alt="property" width="20%" /> 
+                   <img src="/property/<%= item.image_05 %>" alt="property" width="20%" /> 
+                </div>
+            </table>
+            <div class="m-2 p-2 bg-light text-center" style="font-size: 30px">
+                <input class="btn-success w-50" type="submit" name="submit" value="EDIT" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+    <!-- ---------------------------------------------------------------- -->
+    <%- include('footer') %>
+    <!-- <label for=""> id </label>
+    <label for=""> real_estate_name </label>
+    <label for=""> lat </label>
+    <label for=""> lon </label>
+    <label for=""> LOCATION </label>
+    <label for=""> property_type </label>
+    <label for=""> TRANSACTION </label>
+    <label for=""> SALE_TERMS </label>
+    <label for=""> SALE_PRICE </label>
+    <label for=""> RENT_PRICE </label>
+    <label for=""> COMMON_CHARGES </label>
+    <label for=""> DECORATION_STYLE </label>
+    <label for=""> BEDROOMS </label>
+    <label for=""> BATHROOMS </label>
+    <label for=""> DIRECTION_OF_ROOM </label>
+    <label for=""> UNIT_SIZE </label>
+    <label for=""> LAND_AREA </label>
+    <label for=""> INROOM_FACILITIES </label>
+    <label for=""> PUBLIC_FACILITIES </label> -->
+  </body>
+</html>

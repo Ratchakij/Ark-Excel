@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Property Detail</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include('header') %>
+
+        <section class="py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="row-cols-1 input-group-text">
+                    <h1>
+                        <%= item.real_estate_name %>
+                    </h1>
+                </div>
+            </div>
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-1 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card2 h-100">
+                            <div class="slideshow-container">
+                                <div class="mySlides fade">
+                                    <img src="/property/<%= item.image_01 %>" alt="property" >
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="/property/<%= item.image_02 %>" alt="property" >
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="/property/<%= item.image_03 %>" alt="property" >
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="/property/<%= item.image_04 %>" alt="property" >
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="/property/<%= item.image_05 %>" alt="property" >
+                                </div>
+                            </div>
+                            <br>
+                            <div style="text-align: center;">
+                                <div class="dot" onclick="currentSlide(1)">
+                                    <span> <img src="/property/<%= item.image_01 %>" alt="property"></span>
+                                </div>
+                                <div class="dot" onclick="currentSlide(2)">
+                                    <span> <img src="/property/<%= item.image_02 %>" alt="property"></span>
+                                </div>
+                                <div class="dot" onclick="currentSlide(3)">
+                                    <span> <img src="/property/<%= item.image_03 %>" alt="property"></span>
+                                </div>
+                                <div class="dot" onclick="currentSlide(4)">
+                                    <span> <img src="/property/<%= item.image_04 %>" alt="property"></span>
+                                </div>
+                                <div class="dot" onclick="currentSlide(5)">
+                                    <span> <img src="/property/<%= item.image_05 %>" alt="property"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <table class="table" style="width: 100%; margin-top: 50px;">
+                                    <thead >
+                                        <tr>
+                                          <th>Section</th>
+                                          <th>Detail</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><th>id:</th><td><%= item.id %></td></tr>
+                                        <tr><th>real_estate_name:</th><td><%= item.real_estate_name %></td></tr>
+                                        <tr><th>lat:</th><td><%= item.lat %></td></tr>
+                                        <tr><th>lon:</th><td><%= item.lon %></td></tr>
+                                        <tr><th>LOCATION:</th><td><%= item.LOCATION %></td></tr>
+                                        <tr><th>property_type:</th><td><%= item.property_type %></td></tr>
+                                        <tr><th>TRANSACTION:</th><td><%= item.TRANSACTION %></td></tr>
+                                        <tr><th>SALE_TERMS:</th><td><%= item.SALE_TERMS %></td></tr>
+                                        <tr><th>SALE_PRICE:</th><td><%= item.SALE_PRICE %></td></tr>
+                                        <tr><th>RENT_PRICE:</th><td><%= item.RENT_PRICE %></td></tr>
+                                        <tr><th>COMMON_CHARGES:</th><td><%= item.COMMON_CHARGES %></td></tr>
+                                        <tr><th>DECORATION_STYLE:</th><td><%= item.DECORATION_STYLE %></td></tr>
+                                        <tr><th>BEDROOMS:</th><td><%= item.BEDROOMS %></td></tr>
+                                        <tr><th>BATHROOMS:</th><td><%= item.BATHROOMS %></td></tr>
+                                        <tr><th>DIRECTION_OF_ROOM:</th><td><%= item.DIRECTION_OF_ROOM %></td></tr>
+                                        <tr><th>UNIT_SIZE:</th><td><%= item.UNIT_SIZE %></td></tr>
+                                        <tr><th>LAND_AREA:</th><td><%= item.LAND_AREA %></td></tr>
+                                        <tr><th>INROOM_FACILITIES:</th><td><%= item.INROOM_FACILITIES %></td></tr>
+                                        <tr><th>PUBLIC_FACILITIES:</th><td><%= item.PUBLIC_FACILITIES %></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <%- include('footer') %>
+
+            <script>
+                let slideIndex = 1;
+                showSlide(slideIndex);
+
+                function currentSlide(n) {
+                    slideIndex = n;
+                    showSlide(slideIndex);
+                };
+
+                function showSlide(n) {
+                    // n = slideIndex;
+                    let mySlides = document.getElementsByClassName('mySlides');
+                    if (n > mySlides.length) {
+                        slideIndex = 1;
+                    };
+                    if (n < 1) {
+                        slideIndex = mySlides.length;
+                    };
+                    for (let i = 0; i < mySlides.length; i++) {
+                        mySlides[i].style.display = 'none';
+                    }
+                    console.log("n: " + n);
+                    console.log("slideIndex: " + slideIndex);
+                    mySlides[slideIndex - 1].style.display = 'block';
+                    mySlides[slideIndex - 1].classList.add("show");
+
+                    // slideIndex++;
+                    // เรียกฟังก์ชัน showSlides() ใหม่ทุก 3 วินาที (3000 มิลลิวินาที)
+                    // setTimeout(showSlide, 3000);
+                }; 
+            </script>
+</body>
+
+</html>
